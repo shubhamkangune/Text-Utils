@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import './App.css'
+import Navbar from './components/Navbar';
 
 function App() {
+
+ 
 
   return (
     <>
@@ -61,7 +65,7 @@ function App() {
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">Open user menu</span>
               
-              <img className="size-8 rounded-full" src="public/photo.jpg" alt=""/>
+              <img className="size-8 rounded-full" src="photo.jpg" alt=""/>
             </button>
           </div>
 {/* 
@@ -97,6 +101,8 @@ function App() {
     </div>
   </div>
 </nav>
+
+<Navbar/>
 
 
     </>
