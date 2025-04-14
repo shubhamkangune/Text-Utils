@@ -4,25 +4,23 @@ import { useState } from 'react';
 export default function TextForm(props) {
   
   const handleUpClick=()=>{
-    console.log("Uppercase was clicked" + text);
-    let newText = text.toUpperCase();
+    // console.log("Uppercase was clicked: " + text);
+    let newText = text.toUpperCase;
     setText(newText)
   }
   
   const handleOnChange = (event)=>{
-    console.log("on change")
+    // console.log("on change")
     setText(event.target.value);
   }
   
   const [text, setText] = useState("Enter Text here")
   
-
-
-
   return (
-    <div>
-      
+    <>
 
+
+    <div className="container mx-auto my-3">
       <div className=" w-[90vw] m-auto ">
         <h1 htmlFor="comment" className="px-4 ">{props.heading} </h1>
         <div className="px-2 py-2 bg-white rounded-t-lg dark:bg-gray-800">
@@ -33,8 +31,13 @@ export default function TextForm(props) {
         Convert to Uppercase
       </button>
       </div>
-
-
     </div>
+    
+    <div className="container w-[90vw] m-auto ">
+      <h1 className="font-bold text-xl">Your Text Summary</h1>
+      <p>{text.split(" ").length} words and {text.length} characters</p>
+    </div>
+
+    </>
   )
 }
