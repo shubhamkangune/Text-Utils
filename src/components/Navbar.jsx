@@ -3,7 +3,8 @@ import propTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="bg-gray-800">
+
+      <nav className={`${props.mode === 'dark' ? 'bg-gray-800' : 'bg-white'} text-${props.mode === 'dark' ? 'white' : 'black'}`}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -74,7 +75,7 @@ export default function Navbar(props) {
                     className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                     aria-current="page"
                   >
-                    {props.title}   
+                    {props.title}
                   </a>
                   <a
                     href="/"
@@ -93,28 +94,17 @@ export default function Navbar(props) {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button
-                type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-              >
-                <span className="absolute -inset-1.5"></span>
-                <span className="sr-only">View notifications</span>
-                <svg
-                  className="size-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  data-slot="icon"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                  />
-                </svg>
-              </button>
+              
+
+                  {/* Dark and Light Mode  */}
+              <label className="inline-flex items-center mb-5 cursor-pointer my-5">
+                <input type="checkbox" value="" onClick={props.toggleMode} className="sr-only peer" />
+                <div className={`relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer ${props.mode}:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600`}></div>
+                <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Enable {
+
+                  `${props.mode === 'dark' ? 'Light' : 'Dark'}`
+                }Mode</span>
+              </label>
 
               {/* <!-- Profile dropdown --> */}
               <div className="relative ml-3">
@@ -220,6 +210,8 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
+
+
     </div>
   );
 }
