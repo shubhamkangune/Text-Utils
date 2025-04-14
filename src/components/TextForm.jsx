@@ -24,6 +24,20 @@ export default function TextForm(props) {
     setText(event.target.value);
   }
 
+  // copy text
+  const handleCopy = () => {
+    var text = document.getElementById("comment");
+    alert("Text Copied to Clipboard");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
+  // remove extra spaces
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  }
+
   const [text, setText] = useState("")
 
   return (
@@ -49,10 +63,20 @@ export default function TextForm(props) {
           </button>
           
           {/* ClearText */}
-
           <button onClick={handleClearClick} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
             Clear Text
           </button>
+
+          {/* CopyText */}
+          <button onClick={handleCopy} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            Copy Text
+          </button>
+
+          {/* Remove Extra Spaces */}
+          <button onClick={handleExtraSpaces} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            Remove Extra Spaces
+          </button>
+
 
         </div>
       </div>
