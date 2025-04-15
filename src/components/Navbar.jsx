@@ -1,4 +1,7 @@
 import propTypes from "prop-types";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar(props) {
   return (
@@ -64,25 +67,25 @@ export default function Navbar(props) {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-white"
                     aria-current="page"
                   >
                     {props.title}
-                  </a>
-                  <a
-                    href="/"
+                  </Link>
+                  <Link
+                    to="/"
                     className={`rounded-md px-3 py-2 text-sm font-medium dark:text-${props.mode === 'dark' ? 'white' : 'black'} hover:bg-gray-700 hover:text-white`}
                   >
                     Home
-                  </a>
-                  <a
-                    href="/"
+                  </Link>
+                  <Link
+                    to="/about"
                     className={`rounded-md px-3 py-2 text-sm font-medium dark:text-${props.mode === 'dark' ? 'white' : 'black'} hover:bg-gray-700 hover:text-white`}
                   >
                     {props.aboutText}
-                  </a>
+                  </Link>
                   {/* <a href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> */}
                 </div>
               </div>

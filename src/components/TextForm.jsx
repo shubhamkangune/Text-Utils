@@ -15,18 +15,12 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("Converted to Lowercase!", "success");
   }
-  // clear text
-  const handleClearClick =()=>{
-    let newText = "";
-    setText(newText);
-    props.showAlert("Text Cleared!", "success");
-  }
-
+  
   const handleOnChange = (event) => {
     // console.log("on change")
     setText(event.target.value);
   }
-
+  
   // copy text
   const handleCopy = () => {
     var text = document.getElementById("comment");
@@ -34,14 +28,20 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text.value);
     props.showAlert("Copied to clipboard!", "success");
   }
-
+  
   // remove extra spaces
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
     props.showAlert("Removed Extra Spaces!", "success");
   }
-
+  // clear text
+  const handleClearClick =()=>{
+    let newText = "";
+    setText(newText);
+    props.showAlert("Text Cleared!", "success");
+  }
+  
   const [text, setText] = useState("")
 
   return (
@@ -66,11 +66,6 @@ export default function TextForm(props) {
           <button onClick={handleLoClick} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
             Convert to LowerCase
           </button>
-          
-          {/* ClearText */}
-          <button onClick={handleClearClick} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-            Clear Text
-          </button>
 
           {/* CopyText */}
           <button onClick={handleCopy} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
@@ -80,6 +75,11 @@ export default function TextForm(props) {
           {/* Remove Extra Spaces */}
           <button onClick={handleExtraSpaces} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
             Remove Extra Spaces
+          </button>
+          
+          {/* ClearText */}
+          <button onClick={handleClearClick} className="relative inline-flex items-center justify-center p-2 my-3 mx-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-800 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            Clear Text
           </button>
 
 
