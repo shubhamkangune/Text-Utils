@@ -4,7 +4,7 @@ export default function Navbar(props) {
   return (
     <div>
 
-      <nav className={`${props.mode === 'dark' ? 'bg-gray-800' : 'bg-white'} text-${props.mode === 'dark' ? 'white' : 'black'}`}>
+      <nav className={`${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'} text-${props.mode === 'dark' ? 'white' : 'black'}`}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -60,32 +60,26 @@ export default function Navbar(props) {
               </button>
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex shrink-0 items-center">
-                <img
-                  className="h-8 w-auto"
-                  src="public/logo.png"
-                  alt="Your Company"
-                />
-              </div>
+              
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                   <a
                     href="/"
-                    className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    className="rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-white"
                     aria-current="page"
                   >
                     {props.title}
                   </a>
                   <a
                     href="/"
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className={`rounded-md px-3 py-2 text-sm font-medium dark:text-${props.mode === 'dark' ? 'white' : 'black'} hover:bg-gray-700 hover:text-white`}
                   >
                     Home
                   </a>
                   <a
                     href="/"
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className={`rounded-md px-3 py-2 text-sm font-medium dark:text-${props.mode === 'dark' ? 'white' : 'black'} hover:bg-gray-700 hover:text-white`}
                   >
                     {props.aboutText}
                   </a>
@@ -99,8 +93,8 @@ export default function Navbar(props) {
                   {/* Dark and Light Mode  */}
               <label className="inline-flex items-center mb-5 cursor-pointer my-5">
                 <input type="checkbox" value="" onClick={props.toggleMode} className="sr-only peer" />
-                <div className={`relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer ${props.mode}:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600`}></div>
-                <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Enable {
+                <div className={`relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600`}></div>
+                <span className={`ms-3 text-sm font-medium text-gray-900 dark:text-${props.mode === 'dark' ? 'white' : 'black'}`}>Enable {
 
                   `${props.mode === 'dark' ? 'Light' : 'Dark'}`
                 }Mode</span>
