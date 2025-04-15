@@ -28,11 +28,11 @@ export default function About(props) {
 
 
     return (
-    <div  style={myStyle}>
+    <div >
         <div className="container" >
       <section className="">
         <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-          <div className="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
+          <div className="w-full my-5 justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
             <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
               <div className="w-full flex-col justify-center items-start gap-8 flex">
                 <div className="flex-col justify-start lg:items-start items-center gap-4 flex">
@@ -105,10 +105,10 @@ export default function About(props) {
               </button>
             </div>
             <div className="w-full lg:justify-start justify-center items-start flex">
-              <div className="sm:w-[364px] w-full sm:h-[446px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
+              <div className="sm:w-[364px]  w-full sm:h-[446px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
                 <img
                   className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                  src="hanuman.jpg"
+                  src="photo.jpg"
                   alt="TextUtils About Us"
                 />
               </div>
@@ -119,14 +119,14 @@ export default function About(props) {
     </div>
 
       {/* enable dark mode */}
-    <div className="container mx-auto my-3">
+    {/* <div className="container mx-auto my-3">
 
       <button onClick={toggleStyle} className="sm:w-fit w-full group mx-5 px-3.5 py-2 mb-5 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
         <span className="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">
           {btnText}
         </span>
       </button>
-    </div>
+    </div> */}
 
 
     </div>
