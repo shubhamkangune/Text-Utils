@@ -7,16 +7,19 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked: " + text);
     let newText = text.toUpperCase();
     setText(newText)
+    props.showAlert("Converted to Uppercase!", "success");
   }
   // convert to lowercase
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase!", "success");
   }
   // clear text
   const handleClearClick =()=>{
     let newText = "";
     setText(newText);
+    props.showAlert("Text Cleared!", "success");
   }
 
   const handleOnChange = (event) => {
@@ -27,28 +30,30 @@ export default function TextForm(props) {
   // copy text
   const handleCopy = () => {
     var text = document.getElementById("comment");
-    alert("Text Copied to Clipboard");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to clipboard!", "success");
   }
 
   // remove extra spaces
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra Spaces!", "success");
   }
 
   const [text, setText] = useState("")
 
   return (
     <>
-
+    
+    
 
       <div className="container mx-auto my-3">
         <div className=" w-[90vw] m-auto ">
           <h1 htmlFor="comment" className="px-4 ">{props.heading} </h1>
-          <div className="px-2 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-            <textarea id="comment" rows="7" value={text} onChange={handleOnChange} className="w-full px-0  text-sm text-gray-900  border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="" required ></textarea>
+          <div className={`px-2 py-2  rounded-t-lg ${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}>
+            <textarea id="comment" rows="7" value={text} onChange={handleOnChange} className={`w-full px-0  text-sm ${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`} placeholder="" required ></textarea>
           </div>
 
           {/* UpperCase */}
