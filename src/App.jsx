@@ -51,10 +51,12 @@ function App() {
       {/* alert */}
       <Alert alert={alert} />
 
+      
       <Routes>
         {/* textform */}
+        
         <Route path='/' element={
-
+          
           <div className="container mx-auto my-3">
             <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
           </div>

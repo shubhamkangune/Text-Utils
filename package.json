@@ -2,7 +2,7 @@
   "name": "react",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://shubhamkangune.github.io/Text-Utils",
+  "homepage": "https://shubhamkangune.github.io/textutils",
   "type": "module",
   "scripts": {
     "deploy": "gh-pages -d dist",

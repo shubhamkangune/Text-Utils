@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <div>
+        <nav className={`${props.mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'}`}>
 
-      <nav className={`${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'} text-${props.mode === 'dark' ? 'white' : 'black'}`}>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -80,13 +80,12 @@ export default function Navbar(props) {
                   >
                     Home
                   </Link>
-                  <Link
-                    to="/about"
+                  <Link to="/about"
                     className={`rounded-md px-3 py-2 text-sm font-medium dark:text-${props.mode === 'dark' ? 'white' : 'black'} hover:bg-gray-700 hover:text-white`}
                   >
                     {props.aboutText}
                   </Link>
-                  {/* <a href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> */}
+                  {/* <a to="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> */}
                 </div>
               </div>
             </div>
@@ -142,33 +141,33 @@ export default function Navbar(props) {
                   tabIndex="-1"
                 >
                   {/* <!-- Active: "bg-gray-100 outline-hidden", Not Active:  "" --> */}
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-0"
                   >
                     Your Profile
-                  </a>
-                  <a
-                    href="/"
+                  </Link>
+                  <Link
+                    to="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-1"
                   >
                     Settings
-                  </a>
-                  <a
-                    href="/"
+                  </Link>
+                  <Link
+                    to="/"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-2"
                   >
                     Sign out
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -179,31 +178,31 @@ export default function Navbar(props) {
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pt-2 pb-3">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
               aria-current="page"
             >
               Dashboard
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Team
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Projects
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Calendar
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
