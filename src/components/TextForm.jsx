@@ -51,7 +51,7 @@ export default function TextForm(props) {
 
       <div className="container mx-auto my-3">
         <div className=" w-[90vw] m-auto ">
-          <h1 htmlFor="comment" className="px-4 ">{props.heading} </h1>
+          <h1 htmlFor="comment" className="px-4 pb-2 text-[25px] "><strong>{props.heading} </strong></h1>
           <div className={`px-2 py-2  rounded-t-lg ${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}>
             <textarea id="comment" rows="7" value={text} onChange={handleOnChange} className={`w-full px-0  text-sm ${props.mode === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`} placeholder="" required ></textarea>
           </div>
