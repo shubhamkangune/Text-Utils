@@ -187,26 +187,15 @@ export default function Navbar(props) {
               className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
               aria-current="page"
             >
-              Dashboard
+              Home
             </Link>
             <Link
-              to="/"
+              to="/about"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              Team
+              About
             </Link>
-            <Link
-              to="/"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Projects
-            </Link>
-            <Link
-              to="/"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Calendar
-            </Link>
+            
           </div>
 
         </div>
@@ -216,7 +205,6 @@ export default function Navbar(props) {
     </div>
   );
 }
-console.log("hello we are in textform");
 
 Navbar.propTypes = {
   aboutText: propTypes.string.isRequired,
